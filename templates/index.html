@@ -1,0 +1,115 @@
+templates/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Pencil Sketch</title>
+    <link rel="stylesheet" href="static/style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+            
+        body {
+            font-family: Arial, sans-serif;
+            margin:0 ;
+            padding: 0 ;
+            background-color: aquamarine;
+            
+        }
+        header {
+            text-align: center;
+            background-color: #0d0404;
+            color: #fff;
+            padding: 20px;
+        }
+        h1 {
+            color: #f3ebeb;
+        }
+        h2{
+            color:#0d0404;
+        }
+        .container {
+            text-align: center;
+            padding: 50px 20px 300px;
+        }
+        .upload-area {
+            margin: 20px auto;
+            width: 300px;
+            padding: 20px;
+            border: 2px dashed #aaa;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .upload-area img {
+            width: 50px;
+            margin-bottom: 15px;
+        }
+        .upload-area input[type="file"] {
+            display: none;
+        }
+        .upload-area label {
+            display: inline-block;
+            background-color: #f0f0f5;
+            color: #555;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .upload-area label:hover {
+            background-color: #ddd;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #5cb85c;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #39e5a0;
+        }
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 20px 0 ;
+            
+        }
+        
+    </style>
+       
+</head>
+<body >
+
+     <header >
+        <h1>WELCOME TO IMAGE CONVERTER</h1>
+     </header>
+    <div class="container">  
+    <h2 >Upload an Image</h2>
+    <div class="uplode-area">
+        <img src="static/upload-icon.png" alt="Upload Icon">
+    <form method="post" enctype="multipart/form-data"> 
+        <input type="file" name="file" required>
+       
+        <button type="submit" >Convert </button>
+
+    </form>
+    </div>
+   
+       {% if sketch_url %}
+    <h2>Here is your pencil sketch:</h2>
+    <img src="{{ sketch_url }}" alt="Pencil Sketch" style="max-width:100% ; height: auto;">
+    {% endif %}
+    </div>
+   
+  
+    <footer style="text-align:center; background-color: black; color:azure;height: 100px;padding: 16px;">
+        THANKYOU FOR USING 
+    </footer>
+
+</body>
+</html> 
+

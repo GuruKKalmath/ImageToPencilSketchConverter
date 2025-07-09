@@ -1,0 +1,9 @@
+input{
+    color: aqua;
+}
+
+#box{
+    display:flex;
+    text-align: center;
+
+}
